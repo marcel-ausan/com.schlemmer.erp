@@ -1,0 +1,17 @@
+-------------------------------------------------------------------------------------------------------------------------
+------------ADMIN SQL Scripts--------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------
+-------CUSTOM FIELDS - attributes---------------------
+-----------------------------------------
+
+SELECT 
+	-- custom_fields_tab
+	cft.lu, cft.table_name, cft.view_name, cft.published, cft.published_date, cft.used, 
+	-- custom_field_attributes_tab
+	cfat.attribute_name, cfat.prompt, cfat.custom_field_type, cfat.custom_field_impl_type, cfat.EXPRESSION
+	, cfat.metadata, cfat.NOTE, cfat.ENABLED_ON_REPORTS 
+FROM custom_fields_tab cft, custom_field_attributes_tab cfat
+  WHERE cft.lu = cfat.lu
+ORDER BY cft.lu;
