@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------------------------------------------------
+------------EDI SQL Scripts--------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------
+-------Monitoring Console----------------
+-----------------------------------------
+
+alter session set current_schema=ifsapp;
+
+SELECT me.category_id, me.entry_id, me.description, me.statement, me.* 
+FROM YVVDA_MON_ENTRY me
+WHERE me.CATEGORY_ID in ('PUS_ERR', 'GEN_ERROR', 'SCHED_RECERR', 'OUTBOX_ERR', 'INSCHED_ERR', 'IVC_PROBLEM');--SCHED_RECO ABWARTA OP_MON SCHED_IN_TOL MD_CS ENDE SCHED_OUT_OF_TOL PUS_ERR GEN_ERROR EAFEHL INWART INWAIT SCHED_RECERR MD_LOG INTORD MD_CO INSCHED_WAIT SCHED_ENTERED ABWARTT INFEHL TOLVER EAWART MD_PR ABWARTF OUTBOX_ERR MD_PUR INSCHED_ERR ABWARTG IVC_PROBLEM)
