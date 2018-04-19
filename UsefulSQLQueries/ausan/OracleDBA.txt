@@ -1,0 +1,47 @@
+-------------------------------------------------------------------------------------------------------------------------
+------------ORACLE DBA-------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------
+-------DB Links--------------------------
+-----------------------------------------
+sqlplus user/password@dbsid as sysdba
+SELECT DB_LINK, USERNAME, HOST, ALL_DB_LINKS.* FROM ALL_DB_LINKS;
+
+<DBLink>      <User>         <Host> 
+BIDBNEU	      SCHLEMMER	  BIDBNEU
+BRIDBOP1     IFSAPP	          bridbop1
+IFSDE	      IFSAPP	          deidbop75
+XXIDBOPR1	  IFSAPP	          xxidbopr1
+XXIDBOR2	  IFSAPP	          xxidbor2
+XXIDBOR3	  IFSAPP	          xxidbor3
+
+
+-----------------------------------------
+-------Environment Variables--------------
+-----------------------------------------
+
+#run below command on windows server to see the environment variables
+sysdm.cpl -> Advanced -> Environment Variables -> Path
+
+##################
+# DBORA-VDC-01######
+##################
+#Oracle BASE:
+oracle_base='C:\app\oracle'
+
+#Paths set
+C:\app\oracle\product\11.2.0.4\dbhome_1\bin;
+C:\app\11.2.0.4\grid\bin;
+
+#DB user group
+ora_db
+
+##################
+# DBORA-VDC-02######
+##################
+
+#Paths:
+C:\app\oracle\product\11.2.0.4\dbhome_1\bin;
+C:\app\11.2.0.4\grid\bin;
+C:\app\oracle\product\11.2.0\dbhome_1\bin;
